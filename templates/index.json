@@ -78,6 +78,13 @@
         "padding_bottom": 0
       }
     },
+    "1659494538a855ef17": {
+      "type": "clothes4everu_featured_product",
+      "settings": {
+        "top_heading": "About the product",
+        "heading": "Designed for better cooking"
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -213,6 +220,7 @@
   "order": [
     "image_banner",
     "rich_text",
+    "1659494538a855ef17",
     "featured_collection",
     "collage",
     "video",
