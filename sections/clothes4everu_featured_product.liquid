@@ -1,0 +1,98 @@
+<section class="featured_product" id="featured_product">
+    <p class="featured_image--subheading">{{ section.settings.top_heading }}</p>
+    <h2 class="featured_image--heading">{{ section.settings.heading }}</h2>
+
+    <div class="products">
+        {% for product in collections.featured.products %}
+            <a href="{{ product.url }}">
+                <div class="product">
+                    <img src="{{ product.featured_image | img_url: 'medium' }}" alt="Product Image">
+                    <p class="product_title">{{ product.title }}</p>
+                    <p class="product_price">{{ product.price | money }}</p>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+</section>
+
+<style>
+    a {
+        text-decoration: none !important;
+    }
+
+    #featured_product {
+        padding: 5rem 0;
+    }
+
+    #featured_product p {
+        margin: 0 !important;
+    }
+
+    #featured_product .featured_image--subheading,
+    #featured_product .featured_image--heading {
+        text-align: center;
+        margin: 0 !important;
+    }
+
+    #featured_product .featured_image--subheading {
+        font-size: 20px;
+    }
+
+    #featured_product .featured_image--heading {
+        font-size: 40px;
+        font-weight: 600;
+    }
+
+    #featured_product .products {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5rem;
+    }
+
+    #featured_product .product {
+        border: 1px solid #C1C1C1;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    #featured_product .product:hover {
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;;
+    }
+
+    #featured_product .product_price {
+        color: #969494;
+        text-align: center;
+    }
+
+    #featured_product .product_title {
+        color: #545454;
+        font-weight: 600;
+        text-align: center;
+    }
+</style>
+
+{% schema %}
+{
+    "name": "New Featured Product",
+    "settings": [
+        {
+            "type": "text",
+            "id": "top_heading",
+            "label": "Top heading"
+        },
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+        }
+    ],
+    "presets": [
+        {
+            "name": "New Featured Product"
+        }
+    ]
+}
+{% endschema %}
